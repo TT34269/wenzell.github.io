@@ -3,45 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 24px;
-      line-height: 1.7;
-      color: #253347;
-      background: #f6f8fb;
-    }
-    h1, h2 { color: #174e64; }
-    section { margin-top: 36px; }
-  </style>
+  <title>My Engineering Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1> Theresa Wenzel </h1>
-  <p>Engineering Student | Energy & Process Technology</p>
+  <main class="container">
+    <header class="page-header">
+      <p class="eyebrow">Engineering Portfolio</p>
+      <h1>Project Areas</h1>
+      <p>Research, laboratory work, and engineering projects.</p>
+    </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am interested in sustainable energy systems,
-      carbon capture, and experimental research.
-    </p>
-  </section>
+    <section class="project-grid" aria-label="Projects">
 
-  <section>
-    <h2>Projects & Experience</h2>
-    <ul>
-      <li>BET surface area analysis</li>
-      <li>Adsorption–desorption isotherm measurements</li>
-      <li>Particle size distribution analysis</li>
-    </ul>
-  </section>
+      <article class="project-card">
+        <span class="icon" aria-hidden="true">⚗</span>
+        <h2>Adsorption &amp; Material Characterization</h2>
+        <p>
+          Laboratory work involving BET surface area analysis
+          and adsorption–desorption isotherm measurements.
+        </p>
+        <a class="project-link" href="adsorption.html">
+          View Project →
+        </a>
+      </article>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: theresa-wenzel@gmx.de</p>
-  </section>
+      <article class="project-card">
+        <span class="icon" aria-hidden="true">⚙</span>
+        <h2>Particle Size Analysis</h2>
+        <p>
+          Thermal sample preconditioning and particle size
+          distribution analysis.
+        </p>
+        <span class="coming-soon">Project page coming soon</span>
+      </article>
+
+      <article class="project-card">
+        <span class="icon" aria-hidden="true">↗</span>
+        <h2>Further Projects</h2>
+        <p>
+          A space for future engineering projects,
+          practical work, and independent learning.
+        </p>
+        <span class="coming-soon">More to come</span>
+      </article>
+
+    </section>
+  </main>
+
+  <footer> Theresa Wenzel · Engineering Portfolio</footer>
 </body>
 </html>
