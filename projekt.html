@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Project Details | Theresa Wenzel</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(120deg, #293c4d, #344d60);
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    /* OBERE NAVIGATIONSRLEISTE */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(41, 60, 77, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #72b8ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #293c4d;
+      font-weight: bold;
+      overflow: hidden;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #c5cdd5;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #83c5ff;
+    }
+
+    .nav-links a.active {
+      border-bottom: 2px solid #83c5ff;
+      padding-bottom: 4px;
+    }
+
+    /* HAUPTINHALT DER PROJEKTSEITE */
+    main {
+      flex: 1;
+      width: min(900px, 90%);
+      margin: 0 auto;
+      padding-top: 110px;
+      padding-bottom: 80px;
+    }
+
+    /* "Back to Projects" Link */
+    .back-link {
+      display: inline-block;
+      color: #83c5ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+      transition: opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    /* Projekttitel */
+    .project-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.25;
+      margin: 0 0 40px 0;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Überschriften im Inhalt */
+    .section-title {
+      font-size: 1.5rem;
+      margin: 45px 0 15px 0;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    /* Fließtext */
+    .project-text {
+      color: #c5cdd5;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* Bild-Container */
+    .project-image-container {
+      margin: 25px 0 35px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .project-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-caption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9ab0c5;
+      margin-top: 8px;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      padding: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #c5cdd5;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        gap: 15px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-avatar">TW</div>
+      THERESA WENZEL
+    </a>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Projects</a></li>
+      <li><a href="mailto:deine-email@example.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ZURÜCK-LINK -->
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+    <!-- 1. HIER DEN PROJEKTTITEL EINTRAGEN -->
+    <h1 class="project-title">Your Project Title</h1>
+
+
+    <!-- 2. OVERVIEW (Kurze Zusammenfassung) -->
+    <h2 class="section-title">Overview</h2>
+    <p class="project-text">
+      <!-- TRAGE HIER DEINEN OVERVIEW-TEXT EIN (z.B. Was war das Ziel? Was hast du gemacht?) -->
+      Write a short summary here explaining the core idea, goal, and your role in this project.
+    </p>
+
+    <!-- BILD ZUM OVERVIEW (Optional):
+         Lösche die Zeichen <!-- und --> am Anfang und Ende, um das Bild zu aktivieren.
+         Ersetze 'dein-bild-1.jpg' durch den echten Dateinamen deines Bildes im Repository. -->
+    <!--
+    <div class="project-image-container">
+      <img src="dein-bild-1.jpg" alt="Overview Image">
+    </div>
+    <div class="image-caption">Figure 1: Short description of the overview image</div>
+    -->
+
+
+    <!-- 3. ARBEITSSCHRITTE / WORK STEPS -->
+    <h2 class="section-title">Work Steps</h2>
+    
+    <!-- SCHRITT 1 -->
+    <p class="project-text">
+      <strong>Step 1: Initial Planning & Research</strong><br>
+      <!-- TRAGE HIER DEINEN TEXT FÜR SCHRITT 1 EIN -->
+      Describe the first phase of your work here (e.g., requirements, literature research, or initial concept).
+    </p>
+    <!-- BILD FÜR SCHRITT 1 (Optional) -->
+    <!--
+    <div class="project-image-container">
+      <img src="dein-bild-schritt1.jpg" alt="Step 1 Image">
+    </div>
+    <div class="image-caption">Figure 2: Planning / Concept sketch</div>
+    -->
+
+    <!-- SCHRITT 2 -->
+    <p class="project-text">
+      <strong>Step 2: Design & Simulation / Implementation</strong><br>
+      <!-- TRAGE HIER DEINEN TEXT FÜR SCHRITT 2 EIN -->
+      Describe the next phase here (e.g., CAD modeling, calculations, programming, or setup).
+    </p>
+    <!-- BILD FÜR SCHRITT 2 (Optional) -->
+    <!--
+    <div class="project-image-container">
+      <img src="dein-bild-schritt2.jpg" alt="Step 2 Image">
+    </div>
+    <div class="image-caption">Figure 3: CAD model / simulation result</div>
+    -->
+
+    <!-- SCHRITT 3 (Du kannst bei Bedarf weitere Schritte kopieren und einfügen) -->
+    <p class="project-text">
+      <strong>Step 3: Evaluation & Final Results</strong><br>
+      <!-- TRAGE HIER DEINEN TEXT FÜR SCHRITT 3 EIN -->
+      Describe the final phase here (e.g., testing, evaluation, and conclusion).
+    </p>
+    <!-- BILD FÜR SCHRITT 3 (Optional) -->
+    <!--
+    <div class="project-image-container">
+      <img src="dein-bild-schritt3.jpg" alt="Step 3 Image">
+    </div>
+    <div class="image-caption">Figure 4: Final implementation or measurement results</div>
+    -->
+
+  </main>
+
+  <footer>
+    Theresa Wenzel · Portfolio
+  </footer>
+
+</body>
+</html>
