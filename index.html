@@ -26,7 +26,7 @@
       line-height: 1.7;
     }
 
-    /* Feste Navigationsleiste oben */
+    /* FESTE NAVIGATIONSLEISTE */
     .navbar {
       position: fixed;
       top: 0;
@@ -57,6 +57,7 @@
     .nav-avatar {
       width: 38px;
       height: 38px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: #72b8ff;
       display: flex;
@@ -92,11 +93,12 @@
       padding-bottom: 4px;
     }
 
+    /* HAUPTINHALT */
     main {
       flex: 1;
       width: min(1200px, 90%);
       margin: 0 auto;
-      padding-top: 70px; /* Damit der Inhalt nicht unter der Navbar verschwindet */
+      padding-top: 70px;
       padding-bottom: 80px;
     }
 
@@ -119,7 +121,6 @@
       text-transform: uppercase;
     }
 
-    /* Dein Name groß und zentriert */
     .hero-name {
       margin: 0 0 15px;
       font-size: clamp(2.5rem, 7vw, 4.2rem);
@@ -134,7 +135,7 @@
       font-size: 1.1rem;
     }
 
-    /* Pfeil / Hinweistext zum Nach-Unten-Scrollen */
+    /* HINWEIS ZUM SCROLLEN */
     .scroll-indicator {
       margin-top: 20px;
       color: #83c5ff;
@@ -152,7 +153,11 @@
       opacity: 1;
     }
 
-    /* Das Projekt-Raster */
+    /* PROJEKTBEREICH */
+    #projects {
+      scroll-margin-top: 100px;
+    }
+
     .projects-title {
       text-align: center;
       font-size: 2rem;
@@ -161,10 +166,12 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: minmax(0, 440px);
+      grid-template-columns: repeat(2, minmax(0, 440px));
       justify-content: center;
+      gap: 30px;
     }
 
+    /* ANKLICKBARE PROJEKTKARTEN */
     .project-card {
       display: flex;
       flex-direction: column;
@@ -205,7 +212,7 @@
       height: 65px;
     }
 
-    .project-card h2 {
+    .project-card h3 {
       margin: 0 0 22px;
       font-size: 1.6rem;
       line-height: 1.4;
@@ -223,6 +230,7 @@
       font-weight: bold;
     }
 
+    /* FUSSZEILE */
     footer {
       padding: 24px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -231,21 +239,61 @@
       text-align: center;
     }
 
-    @media (max-width: 600px) {
-      .nav-links {
-        gap: 15px;
-        font-size: 0.85rem;
+    /* PROJEKTKARTEN AUF KLEINEREN BILDSCHIRMEN */
+    @media (max-width: 750px) {
+      .project-grid {
+        grid-template-columns: minmax(0, 440px);
       }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 0 4%;
+      }
+
+      .nav-brand {
+        gap: 8px;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+      }
+
+      .nav-avatar {
+        width: 32px;
+        height: 32px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+
       .project-card {
         min-height: 350px;
         padding: 35px 24px;
       }
     }
 
+    @media (max-width: 380px) {
+      .nav-brand-name {
+        display: none;
+      }
+    }
+
+    /* REDUZIERTE ANIMATIONEN */
     @media (prefers-reduced-motion: reduce) {
-      .project-card {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .project-card,
+      .scroll-indicator,
+      .nav-links a {
         transition: none;
       }
+
       .project-card:hover {
         transform: none;
       }
@@ -255,44 +303,53 @@
 
 <body>
 
-  <!-- OBERE NAVIGATIONSRLEISTE -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">
-      <div class="nav-avatar">TW</div>
-      THERESA WENZEL
+  <!-- NAVIGATION -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="index.html" class="nav-brand" aria-label="Theresa Wenzel – Home">
+      <span class="nav-avatar" aria-hidden="true">TW</span>
+      <span class="nav-brand-name">THERESA WENZEL</span>
     </a>
-    
+
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <a href="index.html" class="active" aria-current="page">Home</a>
+      </li>
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- 1. VORDERSEITE (Formfüllend, beim Laden sichtbar) -->
+    <!-- KOPFBEREICH -->
     <header class="page-header">
       <p class="portfolio-name">PORTFOLIO</p>
-      
+
       <h1 class="hero-name">Theresa Wenzel</h1>
 
       <p class="intro">
-        I'm a Mechanical Engineering student B.Eng. in progress specializing in Sustainable Energy & Hydrogen Systems
+        I'm a Mechanical Engineering student (B.Eng. in progress),
+        specializing in Sustainable Energy &amp; Hydrogen Systems.
       </p>
 
       <a href="#projects" class="scroll-indicator">
         <span>View projects</span>
-        <span>↓</span>
+        <span aria-hidden="true">↓</span>
       </a>
     </header>
 
-    <!-- 2. PROJEKTBEREICH (Erst nach dem Scrollen sichtbar) -->
-    <section id="projects" aria-label="Projektübersicht">
-      
-      <h2 class="projects-title">MY PROJECTS</h2>
+    <!-- PROJEKTÜBERSICHT -->
+    <section id="projects" aria-labelledby="projects-heading">
+
+      <h2 id="projects-heading" class="projects-title">MY PROJECTS</h2>
 
       <div class="project-grid">
+
+        <!-- PROJEKT 1: KI-GESTÜTZTE PRÜFBOX -->
         <a class="project-card" href="projekt.html">
 
           <span class="project-icon" aria-hidden="true">
@@ -308,17 +365,47 @@
             </svg>
           </span>
 
-          <h2>AI-Supported Test Box</h2>
+          <h3>AI-Supported Test Box</h3>
 
           <p>
-            Development of a hardware prototype for an AI-supported test box 
-            using Revolution Pi modules, including power supply wiring, 
+            Development of a hardware prototype for an AI-supported test box
+            using Revolution Pi modules, including power supply wiring,
             fuse protection, and connections for future sensor integration.
           </p>
 
           <span class="project-link">View Project →</span>
 
         </a>
+
+        <!-- PROJEKT 2: 3D-SCAN MIT GOM INSPECT -->
+        <a class="project-card" href="projekt-2.html">
+
+          <span class="project-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 3 3 8v8l9 5 9-5V8l-9-5Z"/>
+              <path d="m3 8 9 5 9-5"/>
+              <path d="M12 13v8"/>
+            </svg>
+          </span>
+
+          <h3>3D Scan Inspection with GOM Inspect</h3>
+
+          <p>
+            Evaluation of dimensional and form tolerances using a 3D scan
+            in GOM Inspect, including surface comparison and recommendations
+            for reducing manufacturing deviations.
+          </p>
+
+          <span class="project-link">View Project →</span>
+
+        </a>
+
       </div>
 
     </section>
