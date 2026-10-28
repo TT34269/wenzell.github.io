@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Project Details | Theresa Wenzel</title>
+  <title>AI-Supported Test Box | Theresa Wenzel</title>
 
   <style>
     * {
@@ -26,7 +26,7 @@
       line-height: 1.7;
     }
 
-    /* OBERE NAVIGATIONSRLEISTE */
+    /* NAVIGATION */
     .navbar {
       position: fixed;
       top: 0;
@@ -64,7 +64,6 @@
       justify-content: center;
       color: #293c4d;
       font-weight: bold;
-      overflow: hidden;
     }
 
     .nav-links {
@@ -92,7 +91,7 @@
       padding-bottom: 4px;
     }
 
-    /* HAUPTINHALT DER PROJEKTSEITE */
+    /* INHALT */
     main {
       flex: 1;
       width: min(900px, 90%);
@@ -101,14 +100,12 @@
       padding-bottom: 80px;
     }
 
-    /* "Back to Projects" Link */
     .back-link {
       display: inline-block;
       color: #83c5ff;
       text-decoration: none;
       font-size: 0.95rem;
       margin-bottom: 30px;
-      transition: opacity 0.2s ease;
     }
 
     .back-link:hover {
@@ -116,34 +113,31 @@
       text-decoration: underline;
     }
 
-    /* Projekttitel */
     .project-title {
       font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.25;
-      margin: 0 0 40px 0;
+      margin: 0 0 30px 0;
       color: #ffffff;
       font-weight: 700;
     }
 
-    /* Überschriften im Inhalt */
     .section-title {
       font-size: 1.5rem;
-      margin: 45px 0 15px 0;
+      margin: 40px 0 15px 0;
       color: #ffffff;
       font-weight: bold;
     }
 
-    /* Fließtext */
     .project-text {
       color: #c5cdd5;
       font-size: 1.05rem;
       line-height: 1.8;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
-    /* Bild-Container */
+    /* BILDER */
     .project-image-container {
-      margin: 25px 0 35px 0;
+      margin: 25px 0 10px 0;
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -160,8 +154,7 @@
       text-align: center;
       font-size: 0.85rem;
       color: #9ab0c5;
-      margin-top: 8px;
-      margin-bottom: 25px;
+      margin: 8px 0 30px 0;
     }
 
     footer {
@@ -183,91 +176,118 @@
 
 <body>
 
- <!-- NAVBAR -->
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <a href="index.html" class="nav-brand">
       <div class="nav-avatar">TW</div>
       THERESA WENZEL
     </a>
-    
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#projects" class="active">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  
+
   <main>
 
-    <!-- ZURÜCK-LINK -->
     <a href="index.html#projects" class="back-link">← Back to Projects</a>
 
-    <!-- 1. HIER DEN PROJEKTTITEL EINTRAGEN -->
-    <h1 class="project-title">Your Project Title</h1>
+    <!-- PROJEKTTITEL -->
+    <h1 class="project-title">AI-Supported Test Box</h1>
 
-
-    <!-- 2. OVERVIEW (Kurze Zusammenfassung) -->
+    <!-- OVERVIEW -->
     <h2 class="section-title">Overview</h2>
+
     <p class="project-text">
-      <!-- TRAGE HIER DEINEN OVERVIEW-TEXT EIN (z.B. Was war das Ziel? Was hast du gemacht?) -->
-     The following report documents my approach to building a model for an AI-supported test box.
+      This project documents the construction of a model for an AI-supported test box.
+      The first work step focused on establishing a safe and clearly structured 24 V DC power
+      supply for the RevPi Core SE, RevPi DIO, and RevPi AIO modules. The setup includes terminal
+      connections, grounding, a load disconnect switch with fuse protection, and an LED indicator
+      for voltage status.
     </p>
 
-    <!-- BILD ZUM OVERVIEW (Optional):
-         Lösche die Zeichen <!-- und --> am Anfang und Ende, um das Bild zu aktivieren.
-         Ersetze 'dein-bild-1.jpg' durch den echten Dateinamen deines Bildes im Repository. -->
-    <!--
-    <div class="project-image-container">
-      <img src="dein-bild-1.jpg" alt="Overview Image">
-    </div>
-    <div class="image-caption">Figure 1: Short description of the overview image</div>
-    -->
+    <!-- BILD 1 -->
+    <figure class="project-image-container">
+      <img src="bild-1.jpg" alt="Power supply connected to RevPi modules">
+      <figcaption class="image-caption">
+        Figure 1: Initial wiring of the power supply and RevPi modules
+      </figcaption>
+    </figure>
 
 
-    <!-- 3. ARBEITSSCHRITTE / WORK STEPS -->
-    <h2 class="section-title">Work Steps</h2>
-    
-    <!-- SCHRITT 1 -->
+    <!-- TEXT ZU BILD 1 -->
     <p class="project-text">
-      <strong>Step 1: Initial Planning & Research</strong><br>
-      <!-- TRAGE HIER DEINEN TEXT FÜR SCHRITT 1 EIN -->
-      Describe the first phase of your work here (e.g., requirements, literature research, or initial concept).
+      The aim of the first work step was to connect the power supply unit to three modules connected
+      in series—the RevPi Core SE, RevPi DIO, and RevPi AIO—via terminals shown in grey and blue.
+      This ensures a 24 V DC power supply for each module. The RevPi modules are designed for a typical
+      24 V DC supply.
+      
     </p>
-    <!-- BILD FÜR SCHRITT 1 (Optional) -->
-    <!--
-    <div class="project-image-container">
-      <img src="dein-bild-schritt1.jpg" alt="Step 1 Image">
-    </div>
-    <div class="image-caption">Figure 2: Planning / Concept sketch</div>
-    -->
 
-    <!-- SCHRITT 2 -->
     <p class="project-text">
-      <strong>Step 2: Design & Simulation / Implementation</strong><br>
-      <!-- TRAGE HIER DEINEN TEXT FÜR SCHRITT 2 EIN -->
-      Describe the next phase here (e.g., CAD modeling, calculations, programming, or setup).
+      The modules were wired individually to the terminals so that they could be replaced easily if
+      necessary. To make this possible, white jumpers were installed to connect the blue and grey
+      terminals to one another. They ensure that the 24 V voltage supplied by the power supply unit is
+      distributed across several cables. In addition, the modules were grounded, which can be recognised
+      by the yellow and green colours. This serves as a safety measure and ensures that no hazardous
+      voltage is present on the metal housing in the event of an insulation fault.
     </p>
-    <!-- BILD FÜR SCHRITT 2 (Optional) -->
-    <!--
-    <div class="project-image-container">
-      <img src="dein-bild-schritt2.jpg" alt="Step 2 Image">
-    </div>
-    <div class="image-caption">Figure 3: CAD model / simulation result</div>
-    -->
 
-    <!-- SCHRITT 3 (Du kannst bei Bedarf weitere Schritte kopieren und einfügen) -->
+
+    <!-- TEXT ZU BILD 2 -->
     <p class="project-text">
-      <strong>Step 3: Evaluation & Final Results</strong><br>
-      <!-- TRAGE HIER DEINEN TEXT FÜR SCHRITT 3 EIN -->
-      Describe the final phase here (e.g., testing, evaluation, and conclusion).
+      Furthermore, a load disconnect switch was installed, although it had not yet been connected to the
+      circuit in picture 1. It allows the current flow to be controlled easily. It also contains a 2 A fuse 
+      element, which provides additional protection for the system against damage, as shown in picture 2.
     </p>
-    <!-- BILD FÜR SCHRITT 3 (Optional) -->
-    <!--
-    <div class="project-image-container">
-      <img src="dein-bild-schritt3.jpg" alt="Step 3 Image">
-    </div>
-    <div class="image-caption">Figure 4: Final implementation or measurement results</div>
-    -->
+
+    <!-- BILD 2 -->
+    <figure class="project-image-container">
+      <img src="bild-2.jpg" alt="Load disconnect switch with fuse">
+      <figcaption class="image-caption">
+        Picture 2: Load disconnect switch with 2 A fuse element
+      </figcaption>
+    </figure>
+
+    <p class="project-text">
+      If the fuse wire inside the fuse is subjected to a current that is significantly higher than 2 A,
+      it begins to melt and thereby interrupts the circuit.
+    </p>
+
+    <!-- TEXT ZUR LED-ANZEIGE -->
+    <p class="project-text">
+      Finally, an LED indicator, connected to the power supply unit via the L and N terminals, was
+      integrated into the circuit. Its purpose is to indicate that voltage is present during operation.
+      The fact that no voltage is present in picture 1 and therefore no current is flowing can be
+      recognised by the LED lamp not lighting up green.
+    </p>
+
+    <!-- BILD 3 -->
+    <figure class="project-image-container">
+      <img src="bild-4.jpg" alt="Completed AI-supported test box model">
+      <figcaption class="image-caption">
+        Figure 3: Completed model with 230 V mains connection and green status LED
+      </figcaption>
+    </figure>
+
+    <!-- TEXT ZU BILD 3 -->
+    <p class="project-text">
+      Figure 3 shows the completed model, which is supplied with power via a 230 V mains connection cable
+      connected to the circuit through the N and PE terminals. The green LED lamp serves as immediate proof
+      of this. It can also be seen that all components, with the exception of the grey and orange terminals,
+      are connected to the circuit. This also includes the load disconnect switch, which is connected to
+      terminal L1.
+    </p>
+
+    <p class="project-text">
+      The grey and orange terminals were mounted on the second DIN rail so that they can be used as
+      connection points for sensors if required. Beforehand, an additional cable is connected to these
+      terminals and wired to the connector strip of the RevPi AIO in order to establish a connection to
+      the circuit. The RevPi AIO provides analogue inputs and outputs that can be used for sensor
+      connections.
+    </p>
 
   </main>
 
